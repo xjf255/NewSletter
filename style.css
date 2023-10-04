@@ -15,13 +15,11 @@
     box-sizing: border-box;
     line-height: 24px;
     color: var(--DarkSlateGrey);
-}
-.formSignUp__mobile--none{
-    display: none;
+    font-size: 16px;
 }
 .formSignUp__mobile {
-    max-width: 375px;
-    height: 100vh;
+    min-width: 300px;
+    height: 100%;
     /* height: 100vh; */
     /* display: none; */
     background-color: var(--White);
@@ -36,13 +34,14 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    margin-bottom: 30px;
 }
 
 .formSignUp__main {
     margin: 60px 20px;
 }
 
-.formSignUp__main .main__text {
+.main__text {
     width: 100%;
     height: 50vh;
     display: flex;
@@ -51,7 +50,7 @@
 }
 
 .main__text h1 {
-    /* margin-top: 30px; */
+    margin-top: 30px;
     font-weight: 700;
     font-size: 2.4em;
 }
@@ -64,7 +63,7 @@
 
 .main__text ul {
     width: 100%;
-    height: 40%;
+    height: 50%;
     margin-top: 22px;
     padding-left: 30px;
     list-style-image: url(assets/images/icon-list.svg);
@@ -81,11 +80,11 @@
 
 .main__input {
     width: 100%;
-    height: 40%;
+    height: 30vh;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 26px;
     justify-content: space-between;
     align-items: center;
 }
@@ -100,6 +99,7 @@
     left: 0;
     top: 0;
     font-weight: 700;
+    padding-top: 10px;
 }
 .main__input a{ 
     right: 0;
@@ -109,13 +109,14 @@
     color: var(--Red);
     display: none;
 }
-.main__input input {
+input{
     height: 60px;
     width: 100%;
     font-size: 16px;
     border: 0.5px solid var(--Grey);
     border-radius: 8px;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .submit , .messageSubmit{
@@ -123,9 +124,9 @@
     color: var(--White);
     border: 1px solid #000;
     font-weight: 700;
+    margin-bottom: 30px;
 }
 .main__input #emailMobile{
-    margin-top: -10px;
     padding-left: 20px;
     border: 1px solid var(--Grey);
 } 
@@ -136,11 +137,11 @@
     box-shadow: 0px 18px 21px 1px rgba(255, 98, 87, 0.33);
     -webkit-box-shadow: 0px 18px 21px 1px rgba(255, 98, 87, 0.33);
     -moz-box-shadow: 0px 18px 21px 1px rgba(255, 98, 87, 0.33);
-}.messageSuccess--none{
+}
+.messageSuccess--none{
     display: none;
 }
 .messageSuccess {
-    display: none;
     width: 100%;
     height: 80vh;
     padding: 60px 25px 0 26px;
@@ -171,24 +172,28 @@
     font-size: 14px;
     margin-top: 100px;
     margin-bottom: 50px;
+    cursor: pointer;
 }
-.formSignUp__desktop--none{
+.formSignUp__desktop{
     display: none;
+}
+.formSignUp__mobile--none{
+    display: none;
+    transition: 0.8s;
 }   
 @media (width > 375px) {
     .formSignUp__mobile{
         display: none;
     }
-    body{
-        width: 100%;
-        height: 100vh;
+   body{
+        min-width: 1100px;
+        max-width: 100%;
+        min-height: 100vh;
         background-color: var(--CharcoalGrey);
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-    .formSignUp__desktop--none{
-        display: none;
+        /* font-size: 1rem; */
     }
     .formSignUp__desktop{
         min-width: 50%;
@@ -201,26 +206,32 @@
         border-radius: 30px;
     }
     .formSignUp__main{
-        margin: 60px 0px 60px 40px;
+        width: 50%;
+        min-height: 100%;
     }
     .main__img{
-        width: 50%;
+        width:50%;
     }
     .main__img img{
         width: auto;
+        height: 100%;
         float: right;
     }
-    .formSignUp__main .main__text{
-        width: 94%;
+    .main__text{
+        width: 90%;
+        height: 100%;
     }
     .main__text h1{
-        margin-top: 20px;
+        margin-top: 0px;
     }
     .main__input #emailDesktop{
-        margin-top: -20px;
+        margin-top: -10px;
         padding-left: 20px;
         border: 1px solid var(--Grey);
-    } 
+    }
+    .input__info label{
+        padding-top: 0;
+    }
     .messageSuccess{
         width: 440px;
         height: 50%;
@@ -244,10 +255,14 @@
     }
     .messageSuccess input {
         width: 100%;
-        height: 50px;
+        height: 60px;
         background-color: var(--DarkSlateGrey);
         color: var(--White);
-        margin-top: 0;
-        margin-bottom: 30px;
+        margin-top: 30px;
+        margin-bottom: 10px;
     }
+    .formSignUp__desktop--none{
+        display: none;
+        transition: 0.8s;
+    }   
 }
